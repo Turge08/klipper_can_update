@@ -48,4 +48,6 @@ sudo service klipper stop
 #flash_can sb2040 <your_uuid>
 #flash_can sht36v2 <your_uuid>
 
+# ** Add new entries above here **
+
 sudo service klipper restart
