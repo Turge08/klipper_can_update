@@ -1,4 +1,4 @@
-# klipper_flash
+# klipper_can_update
 
 This script is used to update your current MCU along with Can Bus devices.
 
