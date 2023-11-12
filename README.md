@@ -2,6 +2,10 @@
 
 This script is used to update your current MCU along with Can Bus devices.
 
+## Requirements:
+-Katapult (if ~/katapult doesn't currently exist, install it using: <pre>https://github.com/Arksine/katapult</pre>
+-MCUs must already be flashed with Katapult and Klipper and connected.
+
 ## Installation:
 
 SSH into the Pi and run the following commands:<pre>cd ~
