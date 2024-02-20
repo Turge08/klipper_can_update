@@ -22,7 +22,7 @@ Flashes a Can To USB device
 
 ## Configuration:
 
-To configure the script, edit flash.sh using <pre>nano ~/klipper_can_update/update.sh</pre>
+To configure the script, edit flash.sh using <pre>nano ~/klipper_can_update/flash.sh</pre>
 
 ### Using an existing config:
 
