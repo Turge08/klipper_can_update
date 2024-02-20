@@ -41,3 +41,8 @@ The current list of configs are:
 
 - Add a new line to the script:
 Example (if your new config is "ebb36v10": <pre>flash_can ebb36v10 <your_uuid></pre>
+
+## Execution
+
+Run the following to flash the latest installed version of klipper on the MCUs:
+<pre>~/klipper_can_update/flash.sh</pre>
