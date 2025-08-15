@@ -43,10 +43,11 @@ function flash_can() {
 
 sudo service klipper stop
 
-#flash_usbtocan octopus <your_uuid> stm32f446xx
+flash_usbtocan octopus 1391e320e300 stm32f446xx
 #flash_can ebb36v11 <your_uuid>
 #flash_can sb2040 <your_uuid>
-#flash_can sht36v2 <your_uuid>
+#flash_can sb2209 <your_uuid>
+flash_can sht36v2 44f73d603f57
 
 # ** Add new entries above here **
 
