@@ -26,7 +26,8 @@ SSH into the Pi and run the following commands:<pre>cd ~ && git clone https://gi
 
 After installing, run the following:
 
-<pre>~/flash.sh</pre>
+<pre>cd ~/kliper_can_update
+./flash.sh</pre>
 
 ### Supported MCUs
 
