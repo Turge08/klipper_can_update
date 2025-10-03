@@ -1,43 +1,41 @@
-# klipper_can_update
+# Klipper Can Update
 
 This script is used to update your current MCU along with Can Bus devices.
 
 ## Requirements:
--Katapult (if ~/katapult doesn't currently exist, install it using: <pre>https://github.com/Arksine/katapult</pre>
--MCUs must already be flashed with Katapult and Klipper and connected.
+-Katapult <pre>cd ~ && git clone https://github.com/Arksine/katapult</pre>
+-MCUs must already be flashed with Katapult and connected.
 
 ## Installation:
 
-SSH into the Pi and run the following commands:<pre>cd ~
-git clone https://github.com/Turge08/klipper_can_update</pre>
+SSH into the Pi and run the following commands:<pre>cd ~ && git clone https://github.com/Turge08/klipper_can_update</pre>
 
-## Script Functions:
+## Screenshot
 
-- flash_can <config_name> <uuid>
-Flashes a can bus device
-- flash_usbtocan <config_name> <uuid> <string_in_serial_path>
-Flashes a Can To USB device
+<img width="615" height="372" alt="image" src="https://github.com/user-attachments/assets/191c6ec3-09d0-4a75-8056-9427b4875994" />
 
-<string_in_serial_path>: This is part of the /dev/serial path  the script should look for to identify your MCU in Katapult mode. example: For "/dev/serial/by-id/usb-katapult_stm32f446xx_36003A000A5053424E363420-if00", use "stm32f446xx"
+## Script Functions
 
-## Configuration:
+1. Upgrade Firmware on MCU(s) - Recompile klipper.bin for the specific board and flash the MCU
+2. Add MCU - Scans your printer.cfg (and any includes) for MCUs with UUIDs and adds it to the list of devices to update
+3. Remove MCU - Remove MCU from the list of devices to update
+4. Maintenance - Remove existing configs, Add new config for your specific MCU
+5. Debug Mode - Toggle to display additional information
 
-To configure the script, edit flash.sh using <pre>nano ~/klipper_can_update/update.sh</pre>
+## Usage
 
-### Using an existing config:
+After installing, run the following:
 
-To use the existing configs, uncomment one of the lines and add your UUID.
+<pre>~/flash.sh</pre>
 
-The current list of configs are:
+### Supported MCUs
 
 - octopus: Octopus v1.1/Pro with 446 Processor
 - ebb36v11: BigTreeTech EBB 36 v1.1 (1M bus speed)
 - sb2040: Mellow FLY-SB2040 (1M bus speed)
 - sht36v2: Mellow FLY-SHT36 (1M bus speed)
+- Kraken - BTT Kraken (1M buf speed)
 
-### Using your own config:
+### Adding MCU
 
-- To create your own config, run the following command: <pre>make menuconfig KCONFIG_CONFIG=~/klipper_can_update/<your_config_name>.config</pre> where "<your_config_name>" is the name of the config you'd like to create.
-
-- Add a new line to the script:
-Example (if your new config is "ebb36v10": <pre>flash_can ebb36v10 <your_uuid></pre>
+- A new MCU config can be added through the Maintenance menu. in the "make menuconfig" screen, select the options for your board
